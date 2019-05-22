@@ -1,33 +1,40 @@
-$(document).ready(function() {
-    $('#startbtn').click(start);
-});
-var score = 0;
+
+$("#start").click(start);
+
 function start() {
-  $('#startbtn').hide();
-  showScore();
-  newLetter();
+  $("#start").hide();
+  createNewLetter();
 }
 
-function showScore() {
-  $('#score').text('Score: ' + score);
-}
-function newLetter() {
+function createNewLetter() {
   var letter = randomLetter();
-  var x = randomPosition(screen.width - 20);
-  var y = randomPosition(screen.height - 20);
-  div = $('<div></div>')
-          .text(letter)
-          .css('top', y + 'px')
-          .css('left', x + 'px')
-          .attr('class', 'letter ' + letter);
-  $('body').append(div);
-  setTimeout(newLetter, 3000);
+  var element = $('<div></div>')
+                .text(letter)
+                .css({
+                  backgroundColor: randomColor(),
+                  bottom: randomPosition(),
+                  left: randomPosition()
+                });
+  $('.container').append(element);
 }
+
 function randomLetter() {
-  var code = Math.floor(Math.random() * 26 + 65);
+  var code = 97 + randomNumber(25);
   var letter = String.fromCharCode(code);
   return letter;
 }
-function randomPosition(max) {
-  return Math.floor(Math.random() * max);
+
+function randomPosition() {
+  return randomNumber(100) + '%';
+}
+
+function randomColor() {
+  var red = randomNumber(255);
+  var green = randomNumber(255);
+  var blue = randomNumber(255);
+  return 'rgb(' + red + ',' + green + ',' + blue + ')';
+}
+
+function randomNumber(max) {
+  return Math.floor(Math.random() * (max + 1));
 }
