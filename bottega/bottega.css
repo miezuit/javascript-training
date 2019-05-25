@@ -47,6 +47,30 @@ html, body {
 	}
 }
 
+@keyframes bounce {
+	from {
+		top: 0;
+		color: white;
+	}
+	50% {
+		top: -30px;
+		color: black;
+	}
+	to {
+		top: 0;
+		color: white;
+	}
+}
+
+.bounce {
+	animation-name: bounce;
+	animation-duration: 0.8s;
+	animation-timing-function: linear;
+}
+
+.title span {
+	position: relative;
+}
 
 
 
