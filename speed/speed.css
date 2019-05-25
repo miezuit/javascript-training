@@ -1,31 +1,37 @@
-body {
-  width: 100%;
+html, body {
+  height: 100%;
+  padding: 0px;
   margin: 0px;
 }
-#start {
-  border: solid 3px blue;
-  font: 16px helvetica;
-  border-radius: 6px;
-  -webkit-border-radius: 6px;
+
+.container {
+  width: 80%;
+  height: 80%;
+  position: relative;
+  top: 2%;
+  border-color: darkgray;
+  border-width: medium;
+  border-style: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container div {
   position: absolute;
-  margin-left: 50%;
-  margin-top: 40%;
-}
-#start:hover {
-  cursor: pointer;
-}
-#score {
-    position: absolute;
-    margin-top: 30px;
-    margin-left: 95%;
-}
-.letter {
-  position: absolute;
-  border-radius: 10px;
-  -webkit-border-radius: 10px;
-  width: 30px;
-  height: 30px;
-  font-size: 20px;
-  margin: auto;
+  font-size: 1.5em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
   vertical-align: middle;
+  text-align: center;
+}
+
+.score {
+  font-size: 2em;
+  font-weight: bold;
+  color: brown;
+  text-align: right;
+  padding-top: 2%;
+  padding-right: 10%;
 }
