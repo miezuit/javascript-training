@@ -1,0 +1,58 @@
+/* CSS Document */
+html, body {
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+.container {
+	background: black url(1.jpg) no-repeat center center;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.title {
+	font-family: tenez;
+	font-size: 5em;
+}
+
+.enter {
+	font-family: futura;
+	font-size: 1.5em;
+	cursor: pointer;
+	height: 3em;
+}
+
+.enter:hover::after {
+	content: '';
+	display: block;
+	width: 2.3em;
+	height: 3px;
+	background-color: white;
+	animation-name: grow;
+	animation-duration: 0.7s;
+}
+
+@keyframes grow {
+	from {
+		width: 0em;
+	}
+	to {
+		width: 2.3em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
