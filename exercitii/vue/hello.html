@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="hello.js" defer></script>
+</head>
+<body>
+    <div id="app">
+       <hello></hello>
+
+       <span v-if="show" v-bind:title="title">{{ message }}</span>
+       <ol>
+           <li v-for="todo in todos">
+               {{ todo }}
+           </li>
+       </ol>
+       <button v-on:click="reverse">Reverse message</button>
+       <input type="password" v-model="password">
+       <div>{{ message }}<div>
+    </div>
+</body>
+</html>
