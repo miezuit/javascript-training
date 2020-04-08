@@ -42,9 +42,4 @@ body {
 .z {
     color: orangered;
 }
-.end {
-    visibility: hidden;
-}
-.visible {
-    visibility: visible;
-}
+

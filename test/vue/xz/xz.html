@@ -9,17 +9,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>    
 </head>
 <body>
-    <div class="table" id="app">
-        <div v-on:click="move(0, 0)">{{ table[0][0] }}</div>
-        <div v-on:click="move(0, 1)">{{ table[0][1] }}</div>
-        <div>{{ table[0][2] }}</div>
-        <div>{{ table[1][0] }}</div>
-        <div>{{ table[1][1] }}</div>
-        <div>{{ table[1][2] }}</div>
-        <div>{{ table[2][0] }}</div>
-        <div>{{ table[2][1] }}</div>
-        <div>{{ table[2][2] }}</div>
+    <div id="app">
+        <div class="table" id="app">
+            <div v-for="(cell, index) in table" v-on:click="move(index)">
+                {{ cell }}
+            </div>
+        </div>
+        <div class="end" v-if="winner">You win!</div>
     </div>
-    <div class="end">You win!</div>
 </body>
 </html>
