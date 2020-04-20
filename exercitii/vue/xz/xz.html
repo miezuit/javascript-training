@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="xz.css">
+    <script src="xz.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.common.dev.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="table">
+            <div v-for="(symbol, index) in table" v-on:click="makeMove(index)">
+                {{ symbol }}
+            </div>
+        </div>
+        <div class="end" v-if="finished">You win!</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="flux.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1 v-if="good">Java script in nice!</h1>
+        <h1 v-else>Oh no 😢</h1>
+
+        <div v-if="Math.random() > 0.5">
+            Sometimes you are lucky
+          </div>
+          <div v-else>
+            Sometimes you are not lucky
+          </div>
+
+          <div v-if="hour() < 5">Vise placute!</div>
+          <div v-else-if="hour() < 11">Buna dimineata!</div>
+          <div v-else-if="hour() < 18">Buna ziua!</div>
+          <div v-else>Buna seara!</div>
+
+          <h1 v-show="good">Java Script is beautiful</h1>
+
+          <ul>
+              <li v-for="(message, index) in todo" :id="index">
+                {{ index + 1 }} - {{ message }}
+              </li>
+          </ul>
+
+          <button v-on:click="addNewItem()">Add new todo</button>
+    </div>
+</body>
+</html>

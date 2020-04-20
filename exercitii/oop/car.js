@@ -20,35 +20,15 @@ class Car {
     }
 }
 
-
 var myFord = new Car("Ford", "Mondeo", 2016, "black", 210);
 var myNationalCar = new Car("Dacia", "Logan", 2020, "white", 170);
 
 myNationalCar.drive(100);
+myFord.drive(120);
+myFord.drive(100);
 
-var myCar = {
-    make: "Ford",
-    model: "GT",
-    year: 2020,
-    mileage: 1100.5,
-    maxSpeed: 300,
-    color: "blue",
-    started: false,
-    drive: function(distance) {
-        this.mileage += distance;
-    },
-    start: function() {
-        this.started = true;
-    },
-    stop: function() {
-        this.started = false;
-    }
-}
+console.log(myFord.mileage);
 
-var anotherCar = {
-    model: "Bel Air",
-    year: 1960,
-    maxSpeed: 160,
-    color: "red",
-    started: true
-}
+var fordCopy = Object.assign({}, myFord);
+
+console.log(fordCopy);

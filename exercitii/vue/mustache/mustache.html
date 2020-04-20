@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="mustache.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <span :class="counter > 10 ? 'mare' : 'mic'"></span>
+        {{ message + ' Yes I do' }}
+        {{ 'counter is ' + (counter + 1) }}
+        {{ reversedMessage }}
+        {{ counter > 10 ? 'mare' : 'mic' }}
+    </div>
+</body>
+</html>
