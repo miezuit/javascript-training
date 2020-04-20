@@ -92,11 +92,11 @@ input[type="text"] {
 }
 
 .check {
-  background: lightseagreen;
+  background: rgb(32, 178, 120);
 }
 
 .remove {
-  background: lightcoral;
+  background: rgb(235, 114, 114);
 }
 
 .title.checked {
