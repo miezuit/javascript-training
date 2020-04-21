@@ -71,6 +71,43 @@ input[type="text"] {
     width: 85%;
 }
 
+.task {
+    display: flex;
+    justify-content: space-between;
+}
+
+.controls {
+    display: flex;
+}
+
+.controls div {
+    border-radius: 0.1em;
+    width: 1em;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    margin-left: 0.2em;
+}
+
+.check {
+    background: rgb(32, 178, 115);
+}
+
+.delete {
+    background: rgb(228, 107, 107);
+}
+
+.task.done .title {
+    color: #888;
+    text-decoration: line-through;
+}
+
+.filters {
+    text-align: right;
+    margin-bottom: 0.5em;
+}
+
 
 
 

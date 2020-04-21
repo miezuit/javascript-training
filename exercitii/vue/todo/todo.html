@@ -10,17 +10,7 @@
 </head>
 <body>
     <div id="app">
-        <h1>To do:</h1>
-        <ul>
-            <li v-for="todo in todos">
-                {{ todo }}
-            </li>
-        </ul>
-        <div class="new_task">
-                Task:
-                <input type="text" v-model="task" @keyup.enter="saveItem">
-            <div class="save_task"><button @click="saveItem">Save item</button></div>
-        </div>
+        <todo-list></todo-list>
     </div>
 </body>
 </html>
