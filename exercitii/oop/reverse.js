@@ -8,6 +8,10 @@ class ReversibleString extends String {
     }
 }
 
+import * as Magic from 'magic.js';
+
+var myString = Magic.MagicString("Radu");
+
 var myName = new ReversibleString("Radu");
 
 console.log(myName.reverse().toUpperCase());
