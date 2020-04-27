@@ -13,3 +13,7 @@ var app = new Vue({
             .catch(error => console.log(error));
     }
 });
+
+var app = new Vue({
+
+})
