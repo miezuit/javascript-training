@@ -123,6 +123,7 @@ input[type=text]:focus {
 }
 
 .filters {
+    padding-right: 0.4em;
     text-align: right;
     margin-bottom: 0.5em;
 }
