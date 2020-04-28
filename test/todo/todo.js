@@ -53,7 +53,9 @@ Vue.component("todo-list", {
     `,
     data() {
         return {
-            todos: [new Task("Something to do")],
+            todos: [
+                new Task("Something to do")
+            ],
             task: "",
             showChecked: true
         }
@@ -75,7 +77,7 @@ Vue.component("todo-list", {
             this.showChecked = !this.showChecked;
         }
     },
-})
+});
 
 var app = new Vue({
     el: "#app",
