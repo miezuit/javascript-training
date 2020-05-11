@@ -1,5 +1,5 @@
 import { Superman as AnotherSuperman } from './superman.js';
-import { Mage } from './mage.js';
+import Mage from './mage.js';
 
 class Superman {
 
