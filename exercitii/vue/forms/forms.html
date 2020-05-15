@@ -23,12 +23,12 @@
 
         <input type="submit" value="Send" @click="validate">
 
-        <p v-if="hasError">
+        <div v-if="hasError">
             <p>Plese correct the following errors:</p>
             <ul>
                 <li v-for="error in errors">{{ error }}</li>
             </ul>
-        </p>
+        </div>
     </div>
 </body>
 </html>

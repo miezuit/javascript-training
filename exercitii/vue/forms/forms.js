@@ -10,14 +10,12 @@ let app = new Vue({
     },
     methods: {
         validate() {
-            // validate name not empty
-            // validate age not empty
-            // validate framework not empty
-        }
-    },
-    computed: {
+            this.errors = [
+                'Name must not be null'
+            ]
+        },
         hasErrors() {
-            return errors.length > 0
+            return this.errors.length > 0
         }
     }
 })

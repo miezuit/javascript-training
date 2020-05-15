@@ -12,20 +12,21 @@ Vue.component('hello', {
 });
 
 Vue.component('button-counter', {
-    template: '<button @click="click">You clicked me {{ clicks }} times</button>',
-    // datele trebuie returnate dintr-o metoda denumita data (data este o metoda in componente)
-    data() {
+    template: `
+        <button @click="handleClick">
+            You clicked me {{ clicks }} times
+        </button>`,
+     data() {
         return {
             clicks: 0
         }
     },
     methods: {
-        click() {
+        handleClick() {
             this.clicks++;
-            $emit('counter-clicked', this.click);
         }
     }
-});
+})
 
 var app = new Vue({
     el: '#app',

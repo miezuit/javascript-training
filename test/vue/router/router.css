@@ -1,0 +1,40 @@
+a {
+    color: orange;
+    text-decoration: none;
+}
+.router-link-active {
+    color: orangered;
+    font-weight: bold;
+}
+
+
+.bounce-enter-active {
+    animation-name: bounce;
+    animation-duration: 1s;
+}
+.bounce-leave-active {
+    animation-name: bounce;
+    animation-duration: 1s;
+    animation-direction: reverse;
+}
+
+@keyframes bounce {
+    0% {
+       transform: scale(0); 
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.fade-enter, .fade-leave-to {
+    opacity: 0;
+}
+.fade-enter-to, .fade-leave {
+    opacity: 1;
+}
+.fade-enter-active, .fade-leave-active {
+    transition: opacity 2s;
+}
