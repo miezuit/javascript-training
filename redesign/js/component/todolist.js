@@ -5,22 +5,24 @@ Vue.component('todo-list', {
     <div class="todo-list">
         <h1>{{ list_name }}</h1>
         <div class="filters">
-            <label>Show done:</label>
-            <input type="checkbox" v-model="showDone">
+        <label>Show done:</label>
+        <input type="checkbox" v-model="showDone" />
         </div>
         <ul>
-            <task
-                v-if="showDone || !todo.isDone" 
-                v-for="(todo, index) in todos"
-                :task="todo"
-                @checked="checkTodo(index)"
-                @deleted="deleteTodo(index)">
-            </task>
+        <task
+            v-for="(todo, index) in filteredTodos"
+            :key="index"
+            :task="todo"
+            @checked="checkTodo(index)"
+            @deleted="deleteTodo(index)"
+        ></task>
         </ul>
         <div class="new_task">
-                New:
-                <input type="text" class="task_input" v-model="task" @keyup.enter="saveTodo">
-            <div class="save_task"><button @click="saveTodo">+</button></div>
+        New:
+        <input type="text" class="task_input" v-model="task" @keyup.enter="saveTodo" />
+        <div class="save_task">
+            <button @click="saveTodo">+</button>
+        </div>
         </div>
     </div>
     `,
@@ -47,5 +49,10 @@ Vue.component('todo-list', {
         deleteTodo(index) {
             this.todos.splice(index, 1);
         }
-    }
+    },
+    computed: {
+        filteredTodos() {
+            return this.todos.filter(todo => this.showDone || !todo.isDone)
+        }
+    },
 });
