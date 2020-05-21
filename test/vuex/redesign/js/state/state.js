@@ -5,15 +5,23 @@ export default new Vuex.Store({
     todos: [
         new Todo('Something to do')
     ],
-    task: '',
     showDone: true
   },
   getters: {
-    count: state => state.increments - state.decrements
+    filteredTodos: state => state.todos.filter(todo => state.showDone || !todo.isDone)
   },
   mutations: {
-    increment: (state, n) => state.increments += n,
-    decrement: (state, n) => state.decrements += n,
-    changeMessage: (state, newMessage) => state.message = newMessage
+    saveTodo(state, task) {
+        return state.todos.push(new Todo(task));
+    },
+    checkTodo(state, index) {
+        return state.todos[index].switchDone();
+    },
+    deleteTodo(state, index) {
+        return state.todos.splice(index, 1);
+    },
+    changeShowDone(state, showDone) {
+        return state.showDone = showDone;
+    }
   }
 })
