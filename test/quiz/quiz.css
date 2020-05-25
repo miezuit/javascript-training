@@ -1,0 +1,10 @@
+body {
+    font-family: sans-serif;
+}
+li {
+    cursor: pointer;
+}
+li.selected {
+    color: orange;
+    font-weight: bold;
+}
