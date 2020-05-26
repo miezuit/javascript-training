@@ -1,6 +1,9 @@
 body {
     font-family: sans-serif;
 }
+ol {
+    list-style-type: lower-alpha;
+}
 li {
     cursor: pointer;
 }
