@@ -1,0 +1,13 @@
+.circle {
+    transition-duration: 2s;
+    transition-property: width, height, margin-left, margin-top;
+    position: fixed;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: orange;
+    border-radius: 50%;
+}
+.message {
+    font-size: 1.3em;
+    line-height: 10em;
+    text-align: center;
+}
