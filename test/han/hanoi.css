@@ -1,0 +1,30 @@
+.game {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rod {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column-reverse;
+    position: relative;
+    margin: 1em;
+}
+.rod::before {
+    content: '';
+    display: block;
+    top: -1em;
+    bottom: 0;
+    width: 1em;
+    border-radius: 10% 10% 0% 0%;
+    background-color: sienna;
+    position: absolute;
+}
+.disk {
+    background-color: cornflowerblue;
+    height: 2em;
+    z-index: 1;
+    border-radius: 10%;
+}
