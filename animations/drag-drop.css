@@ -1,0 +1,29 @@
+.dragged {
+    font-family: sans-serif;
+    height: 2em;
+    width: 5em;
+    background-color: cornflowerblue;
+    color: white;
+    border-radius: 10%;
+    line-height: 2em;
+    vertical-align: middle;
+    text-align: center;
+}
+.container {
+    height: 5em;
+    width: 10em;
+    background-color: darkorange;
+    border-radius: 10%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#c1 {
+    top: 10em;
+    left: 10em;
+}
+#c2 {
+    top: 15em;
+    left: 20em;
+}
