@@ -1,0 +1,14 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "description": "REST Web Service Hello World",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Radu G",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

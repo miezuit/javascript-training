@@ -9,16 +9,16 @@
 }
 
 .bounce-enter-active {
-    animation-name: bounce;
+    animation-name: rubberBand;
     animation-duration: 1s;
 }
 .bounce-leave-active {
-    animation-name: bounce;
+    animation-name: rubberBand;
     animation-duration: 1s;
     animation-direction: reverse;
 }
 
-@keyframes bounce {
+/* @keyframes bounce {
     0% {
        transform: scale(0); 
     }
@@ -28,4 +28,4 @@
     100% {
         transform: scale(1);
     }
-}
+} */
