@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="anime.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>
-    <script src="anime.js" defer></script>
-</head>
-<body>
-    <div class="square"></div>
-    <div class="square"></div>
-    <div class="square"></div>
-
-    <div id="lineDrawing"> 
-        <svg
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -108,21 +93,21 @@
        inkscape:path-effect="#path-effect839"
        id="path837"
        d="M 5.7836476,98.370595 C 14.949004,98.294021 24.114092,98.21745 33.278913,98.140881"
-       style="fill:#00aad4;stroke:#3c78c9;stroke-width:2.03673;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
+       style="fill:#00aad4;stroke:#3c78c9;stroke-width:2.03673;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        id="path10"
        d="m 6.5460682,69.907524 c 0,60.476186 0,60.476186 0,60.476186"
-       style="fill:#37c8ab;stroke:#ffde00;stroke-width:2.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1" />
+       style="fill:#37c8ab;stroke:#ffde00;stroke-width:2.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
-       style="fill:none;stroke:#ffa500;stroke-width:2.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4; stroke-opacity:1"
+       style="fill:none;stroke:#ffa500;stroke-width:2.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 33.219142,69.839761 c 0,60.476189 0,60.476189 0,60.476189"
        id="path10-1" />
     <path
        id="path10-1-5"
        d="m 51.071958,93.956137 c 0,36.284213 0,36.284213 0,36.284213"
-       style="fill:none;stroke:#e01515;stroke-width:1.78154;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4; stroke-opacity:1" />
+       style="fill:none;stroke:#e01515;stroke-width:1.78154;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
-       style="fill:none;stroke:#00dbff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4; stroke-opacity:1"
+       style="fill:none;stroke:#00dbff;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="M 51.13184,94.32899 C 54.715573,86.266269 58.299202,78.203784 61.882727,70.141532"
        id="path837-3"
        inkscape:path-effect="#path-effect890"
@@ -134,10 +119,6 @@
        inkscape:path-effect="#path-effect909"
        id="path837-3-1"
        d="M 51.13184,94.32899 C 47.548107,86.266269 43.964478,78.203784 40.380953,70.141532"
-       style="fill:#0088aa;stroke:#ffd311;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4; stroke-opacity:1" />
+       style="fill:#0088aa;stroke:#ffd311;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
-    </div>
-
-</body>
-</html>
