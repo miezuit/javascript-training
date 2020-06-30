@@ -30,6 +30,25 @@ app.listen(
     () => console.log(`Example app listening at http://localhost:${port}`)
 )
 
-{
-    "shortUri": "http://localhost:3000/abc123"
-}
+POST /contact HTTP/1.1
+Host: example.com
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 53
+
+email=scott@mail.com&name=Scott&message=Let us meet!
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+app.post('/post-test', (req, res) => {
+    console.log('Got body:', req.body);
+    res.sendStatus(200);
+});
+
+app.listen(8080, () => console.log(`Started server at http://localhost:8080!`));
