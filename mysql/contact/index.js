@@ -22,8 +22,13 @@ con.connect((err) => {
 // inregistreaza rutele
 app.post("/contact", (req, res) => {
     console.log(req.body)
-    con.query(`INSERT INTO contact 
-               VALUES(NULL, '${req.body.name}', '${req.body.email}', '${req.body.message}')`)
+    con.query(
+        "INSERT INTO contact VALUES(NULL, :name, :email, :message)",
+        {
+            name: req.body.name,
+            email: req.body.email,
+            message: req.body.message
+        });
     // dam raspuns 200 OK
     res.sendStatus(200)
 })

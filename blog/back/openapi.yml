@@ -1,0 +1,93 @@
+openapi: 3.0.0
+info:
+  description: "Blog API"
+  version: "1.0.0"
+  title: "Blog API"
+servers:
+- url: "http://localhost:80"
+security: 
+- bearerAuth: []
+paths:
+  /posts:
+    post:
+      tags:
+      - "post"
+      summary: "Creates a new post in the blog"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Post"
+      responses:
+        200:
+          description: "successful operation"
+  /user:
+    post:
+      tags:
+      - "user"
+      summary: "Create user"
+      description: "This can only be done by the logged in user."
+      operationId: "createUser"
+      parameters:
+      - in: "query"
+        name: "body"
+        description: "Created user object"
+        required: true
+        schema:
+          $ref: "#/components/schemas/User"
+      responses:
+        default:
+          description: "successful operation"
+  /user/login:
+    get:
+      tags:
+      - "user"
+      summary: "Logs user into the system"
+      description: ""
+      operationId: "loginUser"
+      parameters:
+      - name: "email"
+        in: "query"
+        description: "The user name for login"
+        required: true
+        schema:
+          type: string
+      - name: "password"
+        in: "query"
+        description: "The password for login in clear text"
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                type: string
+        400:
+          description: "Invalid username/password supplied"
+
+components:
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    User:
+      type: "object"
+      properties:
+        email:
+          type: "string"
+        name:
+          type: "string"
+        password:
+          type: "string"
+    Post:
+      type: "object"
+      properties:
+        title:
+          type: "string"
+        content:
+          type: "string"
