@@ -23,5 +23,3 @@ connection.query("SELECT * FROM bank_accounts WHERE dob = ? AND bank_account = ?
     dob: req.body.dob,
     account_number: req.body.account_number
    },function(error, results){});
-
-   SELECT*FROM bank_accounts WHERE dob ='1970/01/01';-- ' AND bank_account = '1111987654321'
