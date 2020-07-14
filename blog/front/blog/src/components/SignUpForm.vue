@@ -1,13 +1,15 @@
 <template>
-    <div>
+    <form>
         <input type="text" id="email" v-model="email">
         <input type="text" id="name" v-model="name">
         <input type="password" id="password" v-model="password">
         <input type="button" value="Submit" @click="signup">
-    </div>
+    </form>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     data() {
         return {
@@ -20,14 +22,14 @@ export default {
         signup: () => {
             axios
                 .post(
-                    apiUri + '/user',
+                    'http://localhost/user',
                     {
                         name: this.data.name,
                         email: this.data.email,
                         password: this.data.password,
                     }
                 )
-                .then()
+                .then(this.$router.go('/signup/success'))
                 .catch(error => console.log(error));
         }
     },
@@ -35,5 +37,14 @@ export default {
 </script>
 
 <style scoped>
-
+ form {
+     height: 100vh;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-direction: column;
+ }
+ input {
+     display: block;
+ }
 </style>

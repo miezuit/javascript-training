@@ -1,16 +1,16 @@
 import Vue from 'vue'
-import axios from 'axios'
-import App from './App.vue'
 import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
+import App from './App.vue'
 
 Vue.config.productionTip = false
 
-var apiUri = 'http://localhost'
+Vue.use(VueRouter)
 
-import store from 'store/index.js'
+import store from './store/store'
+import router from './router/router'
 
 new Vue({
-  render: h => h(App),
+  store,
+  router,
+  render: h => h(App)
 }).$mount('#app')
