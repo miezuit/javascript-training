@@ -14,11 +14,23 @@ export default new Vuex.Store({
             state.name = loginData.name
             state.token = loginData.token
             state.email = loginData.email
+            localStorage.setItem('name', state.name)
+            localStorage.setItem('token', state.token)
         },
         clearLoginData: (state) => {
             state.name = null
             state.token = null
             state.email = null
+            localStorage.removeItem('name')
+            localStorage.removeItem('token')
+        },
+        initializeStore: (state) => {
+            if (localStorage.getItem('name')) {
+                state.name = localStorage.getItem('name')
+            }
+            if (localStorage.getItem('token')) {
+                state.token = localStorage.getItem('token')
+            }
         }
     },
 })

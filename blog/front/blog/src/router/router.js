@@ -4,12 +4,13 @@ import SuccessfulSignUp from '../components/SuccessfulSignUp'
 import Login from '../components/Login'
 import ViewPosts from '../components/ViewPosts'
 import AddPost from '../components/AddPost'
+import EditPost from '../components/EditPost'
 
 export default new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: '/signup'
+            redirect: '/login'
         },
         {
             path: '/signup',
@@ -35,6 +36,11 @@ export default new VueRouter({
             path: '/posts/add',
             name: 'postsadd',
             component: AddPost,
+        },
+        {
+            path: '/posts/edit/:id',
+            component: EditPost,
+            props: true
         },
     ]
 })

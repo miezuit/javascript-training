@@ -4,7 +4,10 @@
             <h3>{{post.title}}</h3>
             <h6>{{new Date(post.date).toLocaleDateString()}}</h6>
             <p>{{post.content}}</p>
-            <div><a href="#">Edit</a> <a href="#" @click="del(post.id)">Delete</a></div>
+            <div>
+                <router-link :to="{path: '/posts/edit/' + post.id }">Edit</router-link>
+                <a href="#" @click="del(post.id)">Delete</a>
+            </div>
         </article>
     </PageContainer>
 </template>

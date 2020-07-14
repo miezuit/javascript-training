@@ -129,6 +129,21 @@ app.get("/posts", (req, res) => {
         }
     )
 })
+app.put("/posts/:id", (req, res) => {
+    if (!verifyLogin(req, res)) {
+        return
+    }
+    con.query(
+        'UPDATE posts SET title = ?, content = ? WHERE id = ?',
+        [req.body.title, req.body.content, req.params.id],
+        (err, result) => {
+            if (err) {
+                throw err
+            }
+            res.sendStatus(200)
+        }
+    )
+})
 
 // porneste aplicatia server
 app.listen(
