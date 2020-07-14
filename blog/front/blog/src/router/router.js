@@ -2,7 +2,8 @@ import VueRouter from 'vue-router'
 import SignUpForm from '../components/SignUpForm'
 import SuccessfulSignUp from '../components/SuccessfulSignUp'
 import Login from '../components/Login'
-import Blog from '../components/Blog'
+import ViewPosts from '../components/ViewPosts'
+import AddPost from '../components/AddPost'
 
 export default new VueRouter({
     routes: [
@@ -26,9 +27,14 @@ export default new VueRouter({
             component: Login,
         },
         {
-            path: '/blog',
-            name: 'blog',
-            component: Blog,
+            path: '/posts/view',
+            name: 'posts',
+            component: ViewPosts,
+        },
+        {
+            path: '/posts/add',
+            name: 'postsadd',
+            component: AddPost,
         },
     ]
 })

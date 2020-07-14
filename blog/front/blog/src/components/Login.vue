@@ -46,7 +46,7 @@ export default {
                         email: result.data.email,
                         token: result.data.token
                     })
-                    this.$router.push('/blog')
+                    this.$router.push('/posts/view')
                 })
                 .catch(error => {
                     console.log(error)

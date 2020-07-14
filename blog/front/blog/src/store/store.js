@@ -14,6 +14,11 @@ export default new Vuex.Store({
             state.name = loginData.name
             state.token = loginData.token
             state.email = loginData.email
+        },
+        clearLoginData: (state) => {
+            state.name = null
+            state.token = null
+            state.email = null
         }
     },
 })

@@ -33,11 +33,12 @@ function generateToken(email) {
 }
 // verificam ca utilizatorul este logat
 // adica are un token valid
-function verifyLogin(req) {
+function verifyLogin(req, res) {
    try {
         jwt.verify(req.token, secret)
    } catch(err) {
-       return false
+        res.sendStatus(401)
+        return false
    }
    return true
 }
@@ -63,9 +64,9 @@ app.get("/user/login", (req, res) => {
             if (result.length > 0) {
                 res.status(200)
                    .send({
-                    token: generateToken(email),
-                    name: result[0].name,
-                    email: result[0].email
+                        token: generateToken(email),
+                        name: result[0].name,
+                        email: result[0].email
                 })
             }
             else res.sendStatus(400)
@@ -73,9 +74,7 @@ app.get("/user/login", (req, res) => {
     )
 })
 app.post("/posts", (req, res) => {
-    if (!verifyLogin(req)) {
-        // unauthorized
-        res.sendStatus(401)
+    if (!verifyLogin(req, res)) {
         return
     }
     con.query(
@@ -84,11 +83,51 @@ app.post("/posts", (req, res) => {
     )
     res.sendStatus(200)
 })
-app.get("/posts/{id}", (req, res) => {
-    
+app.get("/posts/:id", (req, res) => {
+    if (!verifyLogin(req, res)) {
+        return
+    }
+    con.query(
+        'SELECT * FROM posts WHERE id = ?',
+        [req.params.id],
+        (err, result) => {
+            if (err) {
+                throw err
+            }
+            res.status(200).send(result)
+        }
+    )    
+})
+app.delete("/posts/:id", (req, res) => {
+    if (!verifyLogin(req, res)) {
+        return
+    }
+    con.query(
+        'DELETE FROM posts WHERE id = ?',
+        [req.params.id],
+        (err, result) => {
+            if (err) {
+                res.sendStatus(500)
+                throw err
+            }
+            res.sendStatus(200)
+        }
+    )
 })
 app.get("/posts", (req, res) => {
-    
+    if (!verifyLogin(req, res)) {
+        return
+    }
+    con.query(
+        'SELECT * FROM posts',
+        [],
+        (err, result) => {
+            if (err) {
+                throw err
+            }
+            res.status(200).send(result)
+        }
+    )
 })
 
 // porneste aplicatia server
