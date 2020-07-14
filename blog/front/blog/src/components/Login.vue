@@ -40,10 +40,11 @@ export default {
                 )
                 .then(result => {
                     this.loginFailed = false
+                    console.log(result.data)
                     store.commit('saveLoginData', {
-                        name: result.name,
-                        email: result.email,
-                        token: result.token
+                        name: result.data.name,
+                        email: result.data.email,
+                        token: result.data.token
                     })
                     this.$router.push('/blog')
                 })

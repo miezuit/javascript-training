@@ -5,13 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        user: null,
+        name: null,
         email: null,
         token: null
     },
     mutations: {
         saveLoginData: (state, loginData) => {
-            state.user = loginData.user
+            state.name = loginData.name
             state.token = loginData.token
             state.email = loginData.email
         }

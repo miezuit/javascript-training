@@ -61,12 +61,12 @@ app.get("/user/login", (req, res) => {
         [email, password],
         (err, result) => {
             if (result.length > 0) {
-                res.body = {
+                res.status(200)
+                   .send({
                     token: generateToken(email),
-                    user: result[0].user,
+                    name: result[0].name,
                     email: result[0].email
-                }
-                res.sendStatus(200)
+                })
             }
             else res.sendStatus(400)
         }
