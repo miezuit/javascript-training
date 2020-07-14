@@ -19,6 +19,9 @@
 -- Table structure for table `comments`
 --
 
+CREATE DATABASE IF NOT EXISTS blog;
+USE blog;
+
 DROP TABLE IF EXISTS `comments`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
@@ -32,7 +35,7 @@ CREATE TABLE `comments` (
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `post_id` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`),
   CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +52,7 @@ CREATE TABLE `posts` (
   `date` date NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `title_UNIQUE` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +69,7 @@ CREATE TABLE `users` (
   `password` varchar(64) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -79,3 +82,6 @@ CREATE TABLE `users` (
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2020-07-14  9:58:59
+
+GRANT ALL PRIVILEGES ON blog.* TO myuser@'%' IDENTIFIED BY '1234';
+FLUSH PRIVILEGES;

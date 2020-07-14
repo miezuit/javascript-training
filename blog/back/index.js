@@ -3,7 +3,7 @@ const express = require("express")
 const cors = require("cors")
 const jwt = require("jsonwebtoken")
 const bearerToken = require('express-bearer-token')
-const port = 80
+const port = 8000
 const uri = `http://localhost:${port}`
 const secret = 'wadc43298923wufwuiasda-sadas'
 
@@ -13,7 +13,7 @@ app.use(cors())
 app.use(bearerToken())
 
 var con = mysql.createConnection({
-    host: "localhost",
+    host: "127.0.0.1",
     user: "myuser",
     password: "1234",
     database: "blog"
@@ -61,7 +61,11 @@ app.get("/user/login", (req, res) => {
         [email, password],
         (err, result) => {
             if (result.length > 0) {
-                res.body = generateToken(email)
+                res.body = {
+                    token: generateToken(email),
+                    user: result[0].user,
+                    email: result[0].email
+                }
                 res.sendStatus(200)
             }
             else res.sendStatus(400)

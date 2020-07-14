@@ -6,12 +6,14 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         user: null,
+        email: null,
         token: null
     },
     mutations: {
-        login: (state, user, token) => {
-            state.user = user
-            state.token = token
+        saveLoginData: (state, loginData) => {
+            state.user = loginData.user
+            state.token = loginData.token
+            state.email = loginData.email
         }
     },
 })
