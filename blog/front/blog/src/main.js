@@ -6,11 +6,14 @@ Vue.config.productionTip = false
 
 Vue.use(VueRouter)
 
-import store from './store/store'
-import router from './router/router'
+import router from './router/router.js'
+import store from './store/store.js'
 
 new Vue({
-  store,
   router,
-  render: h => h(App)
+  store,
+  beforeCreate() {
+    this.$store.commit('init')
+  },
+  render: h => h(App),
 }).$mount('#app')

@@ -1,22 +1,41 @@
 import VueRouter from 'vue-router'
-import SignUpForm from '../components/SignUpForm'
-import SuccessfulSignUp from '../components/SuccessfulSignUp'
+import Login from '../components/Login'
+import SignUp from '../components/SignUp'
+import SignUpSuccess from '../components/SignUpSuccess'
+import ViewPosts from '../components/ViewPosts'
+import AddPost from '../components/AddPost'
+import EditPost from '../components/EditPost'
 
 export default new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: '/signup'
+            redirect: '/login'
+        },
+        {
+            path: '/login',
+            component: Login
         },
         {
             path: '/signup',
-            name: 'signup',
-            component: SignUpForm,
+            component: SignUp
         },
         {
             path: '/signup/success',
-            name: 'signup_success',
-            component: SuccessfulSignUp,
-        }
+            component: SignUpSuccess
+        },
+        {
+            path: '/posts/view',
+            component: ViewPosts
+        },
+        {
+            path: '/posts/add',
+            component: AddPost
+        },
+        {
+            path: '/posts/edit/:id',
+            component: EditPost,
+            props: true
+        },
     ]
 })
