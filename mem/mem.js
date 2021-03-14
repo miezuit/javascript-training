@@ -3,7 +3,7 @@ var images = [];
 
 // get images, place them in an array & randomize the order
 for (i = 0; i < 12; i++) {
-  var img = 'https://png.icons8.com/100/000000/color/' + animals[i] + '.png';
+  var img = 'img/icons8-' + animals[i] + '.png';
   images.push(img);
   images.push(img);
 }
