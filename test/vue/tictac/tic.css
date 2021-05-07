@@ -1,0 +1,13 @@
+.game {
+    height: 12em;
+    width: 12em;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    font-size: 2em;
+}
+.cell {
+    border-width: 1px;
+    border-style: solid;
+    text-align: center;
+    line-height: 3em;
+}
