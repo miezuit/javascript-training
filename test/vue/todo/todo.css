@@ -1,0 +1,6 @@
+li {
+    user-select: none;
+}
+li .description.done {
+    text-decoration: line-through;
+}
