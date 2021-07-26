@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken")
 const bearerToken = require('express-bearer-token')
 const port = 8000
 const uri = `http://localhost:${port}`
-const secret = 'wadc43298923wufwuiasda-sadas'
+const secret = 'wadc43298923wufwuiasdasadas'
 
 const app = express()
 app.use(express.json())
@@ -14,7 +14,7 @@ app.use(bearerToken())
 
 var con = mysql.createConnection({
     host: "127.0.0.1",
-    user: "myuser",
+    user: "root",
     password: "1234",
     database: "blog"
 })

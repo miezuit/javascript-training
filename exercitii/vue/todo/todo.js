@@ -1,3 +1,5 @@
+import "https://cdn.jsdelivr.net/npm/vue/dist/vue.js"
+
 class Todo {
     constructor(title) {
         this.title = title;
