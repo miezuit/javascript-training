@@ -6,6 +6,8 @@ function randomColor() {
 }
 
 class Move {
+    sourceRodId;
+    targetRodId;
     constructor(sourceRodId, targetRodId) {
         this.sourceRodId = sourceRodId
         this.targetRodId = targetRodId
