@@ -1,0 +1,289 @@
+openapi: "3.0.0"
+info:
+  version: "1.0"
+  title: Reconciliation Transaction Provisonining API
+  description: This is a REST API for provisioning internal legacy 2co transactions.
+  contact:
+    name: 2Checkout Payments Team
+    email: payment_team@2checkout.com
+    url: https://2checkout.com
+servers:
+  - url: http://reconciliation-provisioning-api:8092/provision
+paths:
+  /transactions:
+    post:
+      summary: "Provision a transaction"
+      description: ""
+      operationId: "provisionTransaction"
+      tags:
+        - provisioning
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Transaction"
+      responses:
+        200:
+          description: "Success"
+        405:
+          description: "Invalid input"
+    get:
+      summary: "Get all transactions"
+      description: ""
+      operationId: "getAllTransactions"
+      tags:
+        - provisioning
+      responses:
+        200:
+          description: "Returning all 2co transactions."
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Transaction"
+    delete:
+      summary: "Delete all provisioned transactions"
+      tags:
+        - provisioning
+      responses:
+        200:
+          description: "All transactions deleted."
+  /transactions/{id}:
+    get:
+      summary: "Get a transaction by sale id"
+      tags:
+        - provisioning
+      parameters:
+        - in: path
+          name: id
+          description: "Sale id of the transaction."
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: "Returning a 2co transaction."
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+
+components:
+  schemas:
+    Transaction:
+      type: object
+      properties:
+        saleId:
+          type: integer
+        bankId:
+          type: integer
+        type:
+          type: string
+          enum: [SALE, REFUND]
+        referenceNumber:
+          type: number
+        amount:
+          type: number
+          format: float
+          multipleOf: 0.01
+        currency:
+          $ref: "#/components/schemas/Currency"
+        isReconciled:
+          type: boolean
+        isCaptured:
+          type: boolean
+        orderStatus:
+          type: string
+          enum:
+            - COMPLETE
+            - REFUND,
+            - AUTHRECEIVED
+            - PENDING
+            - PENDINGCASH
+            - CANCELED
+            - REVERSED
+            - TEST
+            - CASHED
+    Currency:
+      type: string
+      enum:
+        - AED
+        - AFN
+        - ALL
+        - AMD
+        - ANG
+        - AOA
+        - ARS
+        - AUD
+        - AWG
+        - AZN
+        - BAM
+        - BBD
+        - BDT
+        - BGN
+        - BHD
+        - BIF
+        - BMD
+        - BND
+        - BOB
+        - BOV
+        - BRL
+        - BSD
+        - BTN
+        - BWP
+        - BYR
+        - BZD
+        - CAD
+        - CDF
+        - CHE
+        - CHF
+        - CHW
+        - CLF
+        - CLP
+        - CNY
+        - COP
+        - COU
+        - CRC
+        - CUC
+        - CUP
+        - CVE
+        - CZK
+        - DJF
+        - DKK
+        - DOP
+        - DZD
+        - EGP
+        - ERN
+        - ETB
+        - EUR
+        - FJD
+        - FKP
+        - GBP
+        - GEL
+        - GHS
+        - GIP
+        - GMD
+        - GNF
+        - GTQ
+        - GYD
+        - HKD
+        - HNL
+        - HRK
+        - HTG
+        - HUF
+        - IDR
+        - ILS
+        - INR
+        - IQD
+        - IRR
+        - ISK
+        - JMD
+        - JOD
+        - JPY
+        - KES
+        - KGS
+        - KHR
+        - KMF
+        - KPW
+        - KRW
+        - KWD
+        - KYD
+        - KZT
+        - LAK
+        - LBP
+        - LKR
+        - LRD
+        - LSL
+        - LYD
+        - MAD
+        - MDL
+        - MGA
+        - MKD
+        - MMK
+        - MNT
+        - MOP
+        - MRO
+        - MUR
+        - MVR
+        - MWK
+        - MXN
+        - MXV
+        - MYR
+        - MZN
+        - NAD
+        - NGN
+        - NIO
+        - NOK
+        - NPR
+        - NZD
+        - OMR
+        - PAB
+        - PEN
+        - PGK
+        - PHP
+        - PKR
+        - PLN
+        - PYG
+        - QAR
+        - RON
+        - RSD
+        - RUB
+        - RWF
+        - SAR
+        - SBD
+        - SCR
+        - SDG
+        - SEK
+        - SGD
+        - SHP
+        - SLL
+        - SOS
+        - SRD
+        - SSP
+        - STD
+        - SYP
+        - SZL
+        - THB
+        - TJS
+        - TMT
+        - TND
+        - TOP
+        - TRY
+        - TTD
+        - TWD
+        - TZS
+        - UAH
+        - UGX
+        - USD
+        - USN
+        - USS
+        - UYI
+        - UYU
+        - UZS
+        - VEF
+        - VND
+        - VUV
+        - WST
+        - XAF
+        - XAG
+        - XAU
+        - XBA
+        - XBB
+        - XBC
+        - XBD
+        - XCD
+        - XDR
+        - XFU
+        - XOF
+        - XPD
+        - XPF
+        - XPT
+        - XSU
+        - XTS
+        - XUA
+        - XXX
+        - YER
+        - ZAR
+        - ZMW
+        - ZWL
