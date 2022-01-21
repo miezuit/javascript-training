@@ -11,6 +11,6 @@ describe("Math", function() {
 
         // then:
         expect(result).toEqual(15)
-      });
+      })
 
 })
